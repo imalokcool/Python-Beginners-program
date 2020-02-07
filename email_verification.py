@@ -4,6 +4,10 @@ if (email[0].isdigit()):
     print("Invalid mail")
 elif (email[0] == '@'):
     print("Invalid mail")
+elif (email.endswith('.' or email.endswith('@'))):
+    print("Invalid mail")
+elif(email.index('@') > email.index('.')):
+    print("Invalid mail")
 else:
     for i in range(0, len(email)):
         if (email[i] == ' '):
@@ -14,7 +18,7 @@ else:
                 atcount = atcount + 1
             if (email[i]=='.'):
                 dotcount = dotcount + 1
-    if (atcount>=1 and dotcount>=1):
+    if (atcount==1 and dotcount==1):
         print("Valid mail")
     else:
         print("Invalid mail")
